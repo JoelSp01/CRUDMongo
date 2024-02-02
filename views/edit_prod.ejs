@@ -1,0 +1,59 @@
+<%- include('layout/header') %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6 mx-auto mt-4">
+      <div class="card shadow">
+        <div class="card-header bg-primary">
+          <h3 class="text-light">Editar Producto (<%= user.Nombre%>)</h3>
+        </div>
+        <div class="card-body p-4">
+          <form
+            action="/update/<%= user._id %>"
+            method="post"
+            id="add-form"
+          >
+            <div class="mb-3">
+              <label for="nombre" class="form-label">Nombre</label>
+              <input
+                type="text"
+                name="Nombre"
+                id="Nombre"
+                value="<%= user.Nombre %>"
+                class="form-control form-control-lg"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label for="precio" class="form-label">Precio</label>
+              <input
+                type="number"
+                name="Precio"
+                id="Precio"
+                value="<%= user.Precio %>"
+                class="form-control form-control-lg"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label for="cantidad" class="form-label">Cantidad</label>
+              <input
+                type="number"
+                name="Cantidad"
+                id="Cantidad"
+                value="<%= user.Cantidad %>"
+                class="form-control form-control-lg"
+                required
+              />
+            </div>
+            <div class="mb-3 d-grid">
+                <input type="submit" name="submit" value="Add Producto" class="btn btn-primary btn-lg">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include('layout/footer') %>
